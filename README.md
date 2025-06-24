@@ -1,2 +1,2 @@
-# python-per-data-analyst
+# data_analyst_with_python
 Learning Python and Github to become Data Scientist
