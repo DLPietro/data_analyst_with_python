@@ -1,3 +1,4 @@
+!pip install pandas matplotlib
 import pandas as pd
 
 # Carica il dataset
