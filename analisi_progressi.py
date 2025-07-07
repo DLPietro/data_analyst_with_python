@@ -15,6 +15,11 @@ media_settimanale = df.groupby("Settimana")["PesoMedioSollevato_kg"].mean().rese
 print("\nMedia settimanale dei pesi sollevati:")
 print(media_settimanale)
 
+# Calcola la somma settimanale
+somma_settimanale = df.groupby("Settimana")["PesoMedioSollevato_kg"].sum().reset_index()
+print("\nSomma settimanale dei pesi sollevati:")
+print(somma_settimanale)
+
 # Grafico: Andamento settimanale
 plt.figure(figsize=(10, 5))
 sns.lineplot(data=media_settimanale, x="Settimana", y="PesoMedioSollevato_kg", marker='o')
