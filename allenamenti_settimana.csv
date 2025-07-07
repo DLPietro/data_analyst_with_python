@@ -1,8 +1,15 @@
-Giorno,Sessione,PesoMedioSollevato_kg
-Lunedì,Ballo,0
-Martedì,Frontale 1,80
-Mercoledì,Dorsale 2,100
-Giovedì,Ballo,0
-Venerdì,Frontale 2,60
-Sabato,Dorsale 2,80
-Domenica,Riposo,0
+Settiamana,Giorno,Sessione,NumeroEsercizi,PesoMedioSollevato_kg
+1,Lunedì,Ballo,0,0
+1,Martedì,Frontale 1,20,52.15
+1,Mercoledì,Dorsale 2,21,54.1
+1,Giovedì,Ballo,0
+1,Venerdì,Frontale 2,18, 34.72
+1,Sabato,Dorsale 2,19,45.42
+1,Domenica,Riposo,0
+2,Lunedì,Ballo,0,0
+2,Martedì,Frontale 1,22,52.95
+2,Mercoledì,Dorsale 2,21,46.4
+2,Giovedì,Ballo,0
+2,Venerdì,Frontale 2,18, 35.67
+2,Sabato,Dorsale 2,17,64.35
+2,Domenica,Riposo,0
