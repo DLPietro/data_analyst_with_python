@@ -1,26 +1,36 @@
 !pip install pandas matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Carica il dataset
-df = pd.read_csv("allenamenti_settimana.csv")
+df = pd.read_csv("progressi_allenamenti.csv")
 
-# Mostra le prime righe
+# Mostra prime righe
 print("Primi dati del dataset:")
 print(df.head())
 
-# Filtra solo i giorni di allenamento effettivo
-df_allenamenti = df[df["PesoMedioSollevato_kg"] > 0]
+# Calcola la media settimanale
+media_settimanale = df.groupby("Settimana")["PesoMedioSollevato_kg"].mean().reset_index()
+print("\nMedia settimanale dei pesi sollevati:")
+print(media_settimanale)
 
-# Calcola il peso medio sollevato
-peso_medio = df_allenamenti["PesoMedioSollevato_kg"].mean()
-print(f"\nPeso medio sollevato a settimana: {peso_medio:.1f} kg")
-
-# Grafico: Peso sollevato per giorno
-plt.figure(figsize=(10,5))
-plt.bar(df_allenamenti["Giorno"], df_allenamenti["PesoMedioSollevato_kg"], color='skyblue')
-plt.title("Peso Medio Sollevato per Giorno")
-plt.xlabel("Giorno")
+# Grafico: Andamento settimanale
+plt.figure(figsize=(10, 5))
+sns.lineplot(data=media_settimanale, x="Settimana", y="PesoMedioSollevato_kg", marker='o')
+plt.title("Andamento medio del peso sollevato per settimana")
+plt.xlabel("Settimana")
 plt.ylabel("Peso Medio (kg)")
 plt.grid(True)
+plt.show()
+
+# Grafico a barre per ogni giorno
+plt.figure(figsize=(12, 6))
+sns.barplot(data=df, x="Giorno", y="PesoMedioSollevato_kg", hue="Settimana")
+plt.title("Confronto peso sollevato tra le settimane")
+plt.xlabel("Giorno")
+plt.ylabel("Peso Medio (kg)")
+plt.legend(title="Settimana")
+plt.grid(True)
+plt.tight_layout()
 plt.show()
