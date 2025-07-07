@@ -31,7 +31,10 @@ plt.show()
 
 # Grafico a barre per ogni giorno
 plt.figure(figsize=(12, 6))
-sns.barplot(data=df, x="Giorno", y="PesoMedioSollevato_kg", hue="Settimana")
+
+custom_palette = sns.color_palette("viridis", n_colors=len(df['Settimana'],unique()))
+sns.barplot(data=df, x="Giorno", y="PesoMedioSollevato_kg", hue="Settimana", palette=custom_palette)
+
 plt.title("Confronto peso sollevato tra le settimane")
 plt.xlabel("Giorno")
 plt.ylabel("Peso Medio (kg)")
