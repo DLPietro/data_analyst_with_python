@@ -23,14 +23,15 @@ print(somma_settimanale)
 # Grafico: Andamento settimanale
 plt.figure(figsize=(10, 5))
 
-sns.lineplot(data=media_settimanale, x="Settimana", y="PesoMedioSollevato_kg",color="green", marker="o" ,markersize=10)
-
-plt.title("Andamento del peso medio sollevato per settimana")
+sns.lineplot(data=media_settimanale, x="Settimana", y="PesoMedioSollevato_kg",
+             color="green", marker="o" ,markersize=10)
+plt.title("Peso medio sollevato per settimana")
 plt.xlabel("Settimana")
 plt.ylabel("Peso Medio (kg)")
 plt.xticks(media_settimanale["Settimana"], rotation=45)
 plt.yticks(range(30, 60, 5))
 plt.grid(True)
+plt.tight_layout()
 plt.show()
 
 # Grafico a barre per ogni giorno
