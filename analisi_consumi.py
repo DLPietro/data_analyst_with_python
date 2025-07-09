@@ -9,4 +9,4 @@ df = pd.read_csv("calorie_alimentari_settimana.csv")
 
 # Visualizzazione dati (prime ed ultime righe)
 print("Primi ed ultimi dati del dataset:")
-print(df.head())
+print(df.head(); df.tail())
