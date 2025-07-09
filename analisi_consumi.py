@@ -1,4 +1,4 @@
-# Installazioine ed importazione librerie
+# Installazione ed importazione librerie
 !pip install pandas matplotlib seaborn
 import pandas as pd
 import matplotlib.pyplot as plt
